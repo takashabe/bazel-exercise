@@ -5,7 +5,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/takashabe/bazel-exercise/pkg/go",
     visibility = ["//visibility:private"],
-    deps = ["@com_github_k0kubun_pp//:go_default_library"],
+    deps = ["//pkg/go/vendor/github.com/k0kubun/pp:go_default_library"],
 )
 
 go_binary(
@@ -18,5 +18,5 @@ go_test(
     name = "go_default_test",
     srcs = ["main_test.go"],
     embed = [":go_default_library"],
-    deps = ["@com_github_google_go_cmp//cmp:go_default_library"],
+    deps = ["//pkg/go/vendor/github.com/google/go-cmp/cmp:go_default_library"],
 )

@@ -1,0 +1,64 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "alt_exit.go",
+        "doc.go",
+        "entry.go",
+        "exported.go",
+        "formatter.go",
+        "hooks.go",
+        "json_formatter.go",
+        "logger.go",
+        "logrus.go",
+        "terminal_check_bsd.go",
+        "terminal_check_js.go",
+        "terminal_check_no_terminal.go",
+        "terminal_check_notappengine.go",
+        "terminal_check_solaris.go",
+        "terminal_check_unix.go",
+        "terminal_check_windows.go",
+        "text_formatter.go",
+        "writer.go",
+    ],
+    importmap = "github.com/takashabe/bazel-exercise/lib/go/vendor/github.com/sirupsen/logrus",
+    importpath = "github.com/sirupsen/logrus",
+    visibility = ["//visibility:public"],
+    deps = select({
+        "@io_bazel_rules_go//go/platform:aix": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:android": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:darwin": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:dragonfly": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:freebsd": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:ios": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:linux": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:netbsd": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:openbsd": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:solaris": [
+            "//lib/go/vendor/golang.org/x/sys/unix:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:windows": [
+            "//lib/go/vendor/github.com/konsorten/go-windows-terminal-sequences:go_default_library",
+        ],
+        "//conditions:default": [],
+    }),
+)

@@ -1,0 +1,61 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "colorable_others.go",
+        "colorable_windows.go",
+        "noncolorable.go",
+    ],
+    importmap = "github.com/takashabe/bazel-exercise/pkg/go/vendor/github.com/mattn/go-colorable",
+    importpath = "github.com/mattn/go-colorable",
+    visibility = ["//visibility:public"],
+    deps = select({
+        "@io_bazel_rules_go//go/platform:aix": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:android": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:darwin": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:dragonfly": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:freebsd": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:illumos": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:ios": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:js": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:linux": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:nacl": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:netbsd": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:openbsd": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:plan9": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:solaris": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "@io_bazel_rules_go//go/platform:windows": [
+            "//pkg/go/vendor/github.com/mattn/go-isatty:go_default_library",
+        ],
+        "//conditions:default": [],
+    }),
+)

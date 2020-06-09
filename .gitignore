@@ -6,3 +6,8 @@
 # based on the name of the directory bazel is cloned into.
 /bazel-*
 
+### npm init @bazel ###
+dist
+bazel-out
+node_modules
+
