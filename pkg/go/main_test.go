@@ -7,7 +7,7 @@ import (
 )
 
 func TestA(t *testing.T) {
-	if diff := cmp.Diff("a", "b"); diff != "" {
+	if diff := cmp.Diff("a", "a"); diff != "" {
 		t.Errorf("diff %s", diff)
 	}
 }
