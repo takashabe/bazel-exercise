@@ -5,6 +5,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/takashabe/bazel-exercise/pkg/go2",
     visibility = ["//visibility:private"],
+    deps = ["//pkg/go2/vendor/github.com/takashabe/bazel-exercise/lib/go:go_default_library"],
 )
 
 go_binary(

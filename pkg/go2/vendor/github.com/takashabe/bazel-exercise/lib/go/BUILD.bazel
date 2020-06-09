@@ -1,0 +1,10 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["logger.go"],
+    importmap = "github.com/takashabe/bazel-exercise/pkg/go2/vendor/github.com/takashabe/bazel-exercise/lib/go",
+    importpath = "github.com/takashabe/bazel-exercise/lib/go",
+    visibility = ["//visibility:public"],
+    deps = ["//pkg/go2/vendor/github.com/sirupsen/logrus:go_default_library"],
+)

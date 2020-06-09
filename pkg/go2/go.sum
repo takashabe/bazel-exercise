@@ -12,6 +12,9 @@ github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.6.1 h1:hDPOHmpOpP40lSULcqw7IrRb/u7w6RpDC9399XyoNd0=
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+github.com/takashabe/bazel-exercise v0.0.0-20200609103620-5a28c182695b h1:3lABqx2S3M8RYQfASWeaoz62Nx/B8+9wUglz78qEVPM=
+github.com/takashabe/bazel-exercise/lib/go v0.0.0-20200609103620-5a28c182695b h1:gJ2fZfa3w0C+jrjynnpykJhZR/BfoYO55FsWmtE0nu4=
+github.com/takashabe/bazel-exercise/lib/go v0.0.0-20200609103620-5a28c182695b/go.mod h1:RwGnMkQDdXywk2UKD/rXIvPHqYwFy0B+Fjqq/ZQx7hU=
 golang.org/x/sys v0.0.0-20190422165155-953cdadca894 h1:Cz4ceDQGXuKRnVBDTS23GTn/pU5OE2C0WrNTOYK1Uuc=
 golang.org/x/sys v0.0.0-20190422165155-953cdadca894/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
