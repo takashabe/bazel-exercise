@@ -4,6 +4,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func Info(s string) {
-	logrus.Info(s)
+func Info(format, s string) {
+	logrus.Infof(format, s)
 }

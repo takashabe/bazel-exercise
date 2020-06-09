@@ -7,5 +7,5 @@ import (
 )
 
 func TestFoo(t *testing.T) {
-	logger.Info("hoge")
+	logger.Info("%s", "hoge")
 }

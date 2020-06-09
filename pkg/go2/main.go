@@ -11,5 +11,5 @@ func A() string {
 }
 
 func B() {
-	logger.Info("hoge")
+	logger.Info("%s", "hoge")
 }
