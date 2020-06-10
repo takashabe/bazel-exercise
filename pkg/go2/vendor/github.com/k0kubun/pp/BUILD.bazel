@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "color.go",
+        "pp.go",
+        "printer.go",
+    ],
+    importmap = "github.com/takashabe/bazel-exercise/pkg/go2/vendor/github.com/k0kubun/pp",
+    importpath = "github.com/k0kubun/pp",
+    visibility = ["//visibility:public"],
+    deps = ["//pkg/go2/vendor/github.com/mattn/go-colorable:go_default_library"],
+)
