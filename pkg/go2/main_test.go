@@ -11,3 +11,8 @@ func Test_A(t *testing.T) {
 	assert.Equal(t, "", "")
 	logrus.Infof("%s", "hoge")
 }
+
+func Test_DBConn(t *testing.T) {
+	DBConn()
+	t.Error("fail sample")
+}

@@ -1,5 +1,5 @@
 test: deps
-	bazel test //...
+	bazel test --test_output=errors //...
 
 deps:
 	bazel run //:gazelle -- update
