@@ -3,13 +3,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+
     steps:
       - uses: actions/checkout@v2
-      - name: ls
-        run: pwd; ls -al
-      - name: env
-        run: env
-      - name: bazel
-        run: which bazel; bazel version
-      - name: my_script
-        run: ./myscript.sh
+      - name: test
+        run: make test
