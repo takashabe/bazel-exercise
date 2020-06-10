@@ -7,3 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: ls
         run: pwd; ls -al
+      - name: my_script
+        run: myscript.sh
