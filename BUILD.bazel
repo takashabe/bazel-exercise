@@ -2,3 +2,12 @@ load("@bazel_gazelle//:def.bzl", "gazelle")
 
 # gazelle:prefix github.com/takashabe/bazel-exercise
 gazelle(name = "gazelle")
+
+# ---
+
+load("//build:sample.bzl", "sample")
+
+sample(
+  name = "first macro",
+  word = "first word",
+)
