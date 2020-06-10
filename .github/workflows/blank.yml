@@ -7,5 +7,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: ls
         run: pwd; ls -al
+      - name: env
+        run: env
+      - name: bazel
+        run: which bazel; bazel version
       - name: my_script
         run: ./myscript.sh
