@@ -17,21 +17,25 @@ type InnoDBStats struct {
 }
 
 func main() {
-	DBConn()
+	if err := DBConn(); err != nil {
+		panic(err)
+	}
 }
 
-func DBConn() {
+func DBConn() error {
 	db, err := sqlx.Connect("mysql", "root@/mysql")
 	if err != nil {
-		panic(err)
+		return err
 	}
 	defer db.Close()
 
 	stats := []*InnoDBStats{}
 	if err := db.Select(&stats, "select * from innodb_table_stats"); err != nil {
-		panic(err)
+		return err
 	}
 	pp.Println(stats)
+
+	return nil
 }
 
 func A() string {

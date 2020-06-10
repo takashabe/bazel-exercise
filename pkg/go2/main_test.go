@@ -14,5 +14,4 @@ func Test_A(t *testing.T) {
 
 func Test_DBConn(t *testing.T) {
 	DBConn()
-	t.Error("fail sample")
 }
